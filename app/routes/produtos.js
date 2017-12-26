@@ -9,12 +9,13 @@ module.exports = function(app){
         });
 
         connection.query('SELECT * FROM livros', function(err, results){
-            res.send(results);
+            res.render('produtos/lista', {
+                lista: results
+            });            
         });
 
         connection.end();
 
-        // res.render('produtos/lista');
     });
     return app;
 }
