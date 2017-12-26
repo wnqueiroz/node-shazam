@@ -1,0 +1,23 @@
+{
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "Site da Casa do Código",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnqueiroz/node-shazam.git"
+  },
+  "author": "William Queiroz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnqueiroz/node-shazam/issues"
+  },
+  "homepage": "https://github.com/wnqueiroz/node-shazam#readme"
+}
