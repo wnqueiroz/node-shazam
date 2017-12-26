@@ -4,6 +4,7 @@
   "description": "Site da Casa do Código",
   "main": "index.js",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   },
   "devDependencies": {},
