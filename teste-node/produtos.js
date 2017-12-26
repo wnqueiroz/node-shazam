@@ -1,9 +1,11 @@
 var http = require('http');
 
-var server = http.createServer(function(req,res){
-    res.end("<html><body><h1>Listando os produtos</h1></body></html>");
-});
+http.createServer(function(request,response){
+    if(request.url =="/produtos"){
+      response.end("<html><body>listando os produtos da loja</body>");
+    } else {
+      response.end("<html><body>home da casa do codigo</body></html>");
+    }
+}).listen(3000,"localhost");
 
-server.listen(3000);
-
-console.log("servidor ta rodando");
+console.log("servidor está rodando");
