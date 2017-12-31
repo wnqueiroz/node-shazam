@@ -12,4 +12,8 @@ module.exports = function (app) {
         connection.end();
     });
 
+    app.get("/produtos/form", function (req, res) {
+        res.render('produtos/form');
+    });
+
 };
