@@ -1,16 +1,15 @@
-
 module.exports = function (app) {
-    app.get('/produtos', function (req, res) {
+
+    app.get("/produtos", function (req, res) {
 
         var connection = app.infra.connectionFactory();
+        var produtosBanco = app.infra.produtosBanco;
 
-        connection.query('SELECT * FROM livros', function (err, results) {
-            res.render('produtos/lista', {
-                lista: results
-            });
+        produtosBanco.lista(connection, function (err, results) {
+            res.render('produtos/lista', {lista: results});
         });
 
         connection.end();
     });
-    return app;
-}
+
+};
