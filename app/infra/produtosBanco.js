@@ -1,8 +1,12 @@
 module.exports = function () {
 
-    this.lista = function (connection, callback) {
-        connection.query('select * from produtos', callback);
-    };
+    return function (connection) {
 
-    return this;
+        this.lista = function (callback) {
+            connection.query('select * from produtos', callback);
+        };
+
+        return this;
+    }
+
 };
