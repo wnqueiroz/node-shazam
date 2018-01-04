@@ -1,5 +1,14 @@
 <html>
 <body>
+<div class="errors">
+    <% if(errorsValidation) { %>
+    <ul>
+        <% for(let i= 0; i < errorsValidation.length; i++){ %>
+        <li><%= errorsValidation[i].param %> - <%= errorsValidation[i].msg %></li>
+        <% } %>
+    </ul>
+    <% } %>
+</div>
 <form action="/produtos" method="POST">
     <div>
         <label for="titulo">Título</label>
