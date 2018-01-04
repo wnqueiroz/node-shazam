@@ -36,9 +36,17 @@ module.exports = function (app) {
         var errors = req.validationErrors();
 
         if (errors) {
-            return res.render('produtos/form', {
-                errorsValidation: errors,
-                produto: produto
+
+            res.format({
+                html: function () {
+                    return res.status(400).render('produtos/form', {
+                        errorsValidation: errors,
+                        produto: produto
+                    });
+                },
+                json: function () {
+                    return res.status(400).json(errors);
+                }
             });
         }
 
