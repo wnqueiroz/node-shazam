@@ -21,7 +21,8 @@ module.exports = function (app) {
 
     app.get("/produtos/form", function (req, res) {
         res.render('produtos/form', {
-            errorsValidation: {}
+            errorsValidation: {},
+            produto: {}
         });
     });
 
@@ -36,7 +37,8 @@ module.exports = function (app) {
 
         if (errors) {
             return res.render('produtos/form', {
-                errorsValidation: errors
+                errorsValidation: errors,
+                produto: produto
             });
         }
 
