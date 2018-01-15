@@ -2,7 +2,7 @@
   "name": "casadocodigo",
   "version": "1.0.0",
   "description": "Site da Casa do Código",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
@@ -16,8 +16,9 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "nodemon app > access.log 2> error.log",
+    "start": "node app > access.log 2> error.log"   
+  },  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wnqueiroz/node-shazam.git"

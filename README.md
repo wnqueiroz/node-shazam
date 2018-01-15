@@ -13,6 +13,7 @@ docker build -t wnqueiroz/node-shazam .
 
 Tool      | Command
 --------- | -------
-<img src="docker.png" alt="Docker" width="75"/>    | ```docker container run -d -it --name node-shazam -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:3000 wnqueiroz/node-shazam nodemon app``` | test
+<img src="docker.png" alt="Docker" width="75"/>    | ```docker container run -d -it --name node-shazam -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:3000 wnqueiroz/node-shazam npm test``` | test
+<img src="docker.png" alt="Docker" width="75"/>    | ```docker container run -d -it --name node-shazam -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:3000 wnqueiroz/node-shazam npm start``` | prod
 
 Access with: `docker container exec -it node-shazam /bin/bash`
