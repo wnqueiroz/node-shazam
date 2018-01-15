@@ -5,9 +5,12 @@ var expressValidator = require('express-validator');
 
 module.exports = function () {
     var app = express();
-
+    
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
+    
+    // middleware para a definição de recursos estáticos da aplicação 
+    app.use(express.static('./app/public'));
 
     // middleware para passar a converter e utilizar os dados enviados via POST
     app.use(bodyParser.urlencoded({
