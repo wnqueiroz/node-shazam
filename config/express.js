@@ -25,6 +25,21 @@ module.exports = function () {
     load('routes', {cwd: 'app'})
         .then('infra')
         .into(app);
+    
+    // middleware customizado para página de erro 404
+    app.use((req, res,next) => {
+        res.status(404).render('erros/404');    
+        next();
+    });
+    
+    // middleware customizado para páginas de erros no servidor
+    app.use((error, req, res,next) => {
+        if (process.env.NODE_ENV == 'production') {
+            res.status(500).render('erros/500');
+            return;
+        }
+        next(error);
+    });
 
     return app;
 };
