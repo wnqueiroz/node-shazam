@@ -11,7 +11,8 @@ module.exports = (app) =>{
     });
 
     app.post('/promocoes', (req, res) => {
-        console.log(req.body);
+        var promocao = req.body;
+        app.get('io').emit('novaPromocao', promocao);
         res.redirect('promocoes/form');
     });
 };
